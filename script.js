@@ -3,5 +3,4 @@ gsap.to("circle", {
   ease: Linear.easeNone,
   repeat: -1,
   duration:6,
-  scale:0.8
 });

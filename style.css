@@ -10,8 +10,8 @@ body {
   width: 100%;
   background: linear-gradient(
     135deg,
-    rgba(94, 91, 91, 0.84),
-    rgba(0, 0, 0, 0.791)
+    rgba(94, 91, 91, 0.356),
+    rgb(0, 0, 0)
   );
   overflow: hidden;
 }
@@ -27,7 +27,7 @@ circle {
   z-index: 10;
   backdrop-filter: blur(25px) saturate(180%);
   -webkit-backdrop-filter: blur(25px) saturate(180%);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgb(255, 255, 255);
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
@@ -117,7 +117,6 @@ button {
 button:hover {
   background-position: right center;
   color: gold;
-
   box-shadow: 0 0 10px gold, 0 0 15px #ff7300, 0 0 20px #fffb00;
 }
 button:active {
@@ -131,6 +130,7 @@ button:active {
   font-size: 20px;
   font-family: "Roboto slab", sans-serif;
   font-weight: 700;
+  line-height: 15px;
   
 }
 
@@ -152,4 +152,9 @@ button:active {
 main h1 {
   color: #D8D8D8;
   font-size: 60px;
+}
+
+#register-btn a {
+  text-decoration: none;
+  color: #fff;
 }
