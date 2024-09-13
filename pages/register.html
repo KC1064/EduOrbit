@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduOrbit</title>
+    <link rel="stylesheet" href="/styles/register.css">
+</head>
+
+<body>
+    <!-- Navbar Starts -->
+    <nav>
+        <div id="logo"><img id="logo-img" src="/assets/logo-2.png" alt="">
+            <p id="logo-text">EduOrbit<span>Transcend Learning</span></p>
+        </div>
+        <div id="links">
+            <a href="">Repository</a>
+            <a href="">My Wall</a>
+            <a href="">Forums</a>
+            <a href="">Blogs</a>
+        </div>
+    </nav>
+    <!-- Navbar Ends -->
+
+
+    <div id="container">
+        <h1 id="form-header">Register Yourself Here</h1>
+        <form>
+            <input type="text" name="username" required placeholder="Enter your name">
+            <input type="text" name="clg-id" placeholder="Enter your College ID" required>
+            <input type="password" name="password" placeholder="Enter the Password" required>
+            <input type="email" name="email" placeholder="Enter Email" required>
+            <div class="gender">
+                <div>Gender</div>
+                <div id="gender-opt">
+                    <label for="male">
+                        <input type="radio" id="male" name="gender">Male
+                    </label>
+                    <label for="female">
+                        <input type="radio" id="female" name="gender">Female
+                    </label>
+                    <label for="other">
+                        <input type="radio" id="other" name="gender">Others
+                    </label>
+                </div>
+            </div>
+            <input type="text" name="address" placeholder="Enter College Address" required>
+            <div>
+                <select name="branch" id="tech-branch">
+                    <option value="select">Select Branch</option>
+                    <option value="cs">Computer Science Engineering</option>
+                    <option value="mech">Mechanical Engineering</option>
+                    <option value="elec">Electrical Engineering</option>
+                    <option value="civil">Civil Engineering</option>
+                    <option value="chem">Chemical Engineering</option>
+                    <option value="aero">Aerospace Engineering</option>
+                </select>
+            </div>
+            <div id="tech-skill">
+                <div id="tech-opt">
+                    <p>Technical Skills</p>
+                    <label for="c">
+                        <input type="checkbox" name="languages" id="c">C
+                    </label>
+                    <label for="java">
+                        <input type="checkbox" name="languages" id="java">Java
+                    </label>
+                    <label for="jsp">
+                        <input type="checkbox" name="languages" id="jsp">JSP
+                    </label>
+                    <label for="python">
+                        <input type="checkbox" name="languages" id="python">Python
+                    </label>
+                </div>
+            </div>
+            <button class="upload-button" onclick="document.getElementById('file-input').click();">
+                Upload Resume
+            </button>
+            <input type="file" id="file-input" name="resume" class="hidden-file-input">
+            <div id="btns">
+                <button id="submit-button" type="submit">Submit</button>
+                <button id="reset-button" type="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
