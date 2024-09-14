@@ -8,34 +8,52 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <nav>
-        <div id="logo"><img id="logo-img" src="./assets/logo-2.png" alt="">
-            <p id="logo-text">EduOrbit<span>Transcend Learning</span></p>
-        </div>
-        <div id="links">
-            <a href="">Repository</a>
-            <a href="">My Wall</a>
-            <a href="">Forums</a>
-            <a href="">Blogs</a>
-        </div>
-    </nav>
-    <circle></circle>
     <main>
-        <h1>Welcome To EduOrbit</h1>
-        <p id="main-para">Your hub for innovative educational resources. Discover interactive tools and personalized
-            learning to
-            empower students, professionals, and educators. Elevate your education journey with us today!</p>
-        <div>
-            <button id="register-btn" onclick="window.location.href='pages/register.html';">Register</button>
-        </div>
+        <nav>
+            <div id="logo">
+                <img src="/assets/logo1.png" alt="">
+                <p>EduOrbit.</p>
+            </div>
+            <div id="nav-links">
+                <a href="">Repository</a>
+                <a href="">Forums</a>
+                <a href="">My Wall</a>
+                <a href="">Blogs</a>
+            </div>
+            <button id="reg-btn">Register Here</button>
+        </nav>
+        <div id="hero-section">
+            <div>
+                <h1 id="hero-text">Transform your <span>learning experience</span> with <span>tailored tools</span> and insights.</h1>
+            </div>
+            <button id="course-btn">Checkout The Courses</button>
+        </div>       
     </main>
-
+    
+    <!-- Moved the stats section outside of the hero-section and main tags -->
+    <div id="stats">
+        <div id="stat-nums">
+            <p>20+</p>
+            <p>Active Forums</p>
+        </div>
+        <div id="stat-nums">
+            <p>100+</p>
+            <p>Blog Posts</p>
+        </div>
+        <div id="stat-nums">
+            <p>50+</p>
+            <p>Tailored Repository</p>
+        </div>
+    </div>
+    
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
