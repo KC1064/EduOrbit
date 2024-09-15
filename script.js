@@ -53,3 +53,14 @@ tl.to("#hero-text span",{
   repeat:-1,
   duration: 2
 })
+
+
+document.getElementById('reg-btn').addEventListener('click', function() {
+  window.location.href = 'pages/register.html';
+});
+
+document.getElementById('logo').addEventListener('click', function() {
+  window.location.href = 'index.html';
+});
+
+
