@@ -63,4 +63,28 @@ document.getElementById('logo').addEventListener('click', function() {
   window.location.href = 'index.html';
 });
 
+function showMenu() {
+  const navMob = document.querySelector('.nav-mob');
+  if (navMob.style.display === 'flex') {
+      navMob.style.display = 'none';
+  } else {
+      navMob.style.display = 'flex';
+  }
+}
 
+function hidemenu() {
+  const navMob = document.querySelector('.nav-mob');
+  if (navMob.style.display === 'flex') {
+      navMob.style.display = 'none';
+  } else {
+      navMob.style.display = 'flex';
+  }
+}
+
+
+
+
+// gasp.from("#cross",{
+//   opacity: 0,
+//   x: 30,
+// })
