@@ -1,96 +1,99 @@
-var tl = gsap.timeline();
+const tl = gsap.timeline();
 
-tl.from("#logo", {
+tl.from(".nav-logo", {
+  opacity: 0,
   y: -30,
-  opacity: 0,
-  duration: 0.5,
-});
-
-tl.from("#nav-links", {
-  y: -30,
-  opacity: 0,
-  duration: 0.5,
-  stagger: 0.2,
-});
-
-tl.from("#reg-btn", {
-  y: -30,
-  opacity: 0,
-  duration: 0.5,
-  stagger: 0.2,
-});
-
-tl.from("#hero-section", {
-  y: 60,
-  opacity: 0,
-  duration: 0.5,
-});
-
-tl.from("#stat-nums", {
-  y: 30,
-  opacity: 0,
-  duration: 0.5,
-  stagger: 0.2,
-});
-
-tl.to("#hero-text span", {
-  color: "#24e0b4",
-  fontStyle: "italic",
-  textShadow: "0px 0px 10px #24e0b4",
   duration: 1,
+});
+
+tl.from(".desk-menu a", {
+  opacity: 0,
+  stagger: 0.3,
+  y: -20,
+  duration: 0.5,
+});
+
+tl.from(".reg-btn", {
+  opacity: 0,
+  y: -20,
+  duration: 0.5,
+});
+
+tl.from(".home-text > *", {
+  x: -200,
+  duration: 0.5,
+  opacity: 0,
   stagger: 0.2,
 });
 
-tl.to("#hero-text span", {
-  keyframes: [
-    { textShadow: "0px 0px 15px #24e0b4", duration: 0.1 },
-    { textShadow: "0px 0px 20px #24e0b4", duration: 0.2 },
-    { textShadow: "0px 0px 30px #24e0b4", duration: 0.1 },
-    { textShadow: "0px 0px 20px #24e0b4", duration: 0.2 },
-    { textShadow: "0px 0px 15px #24e0b4", duration: 0.2 },
-  ],
-  repeat: -1,
-  duration: 1,
-  ease: "power1.inOut",
+tl.from("#img-home", {
+  x: 200,
+  opacity: 0,
+  duration: 0.5,
 });
 
-document.getElementById("reg-btn").addEventListener("click", function () {
-  window.location.href = "pages/register.html";
+tl.to("#img-home", {
+  y: 8,
+  duration: 2, 
+  repeat: -1, 
+  yoyo: true, 
+  ease: "power1.inOut", 
 });
 
-document.getElementById("logo").addEventListener("click", function () {
-  window.location.href = "index.html";
-});
+const cursor = document.querySelector("#cursor");
+const imgHome = document.querySelector("#img-home"); // Select the img element by its ID
 
-function showMenu() {
-  const navMob = document.querySelector(".nav-mob");
-  if (navMob.style.display === "flex") {
-    navMob.style.display = "none";
-  } else {
-    navMob.style.display = "flex";
-  }
-}
+// Move cursor with mouse and show "Click"
+imgHome.addEventListener("mousemove", function (e) {
+  cursor.style.display = "flex";
+  cursor.innerHTML = "Click";
 
-function hidemenu() {
-  const navMob = document.querySelector(".nav-mob");
-  if (navMob.style.display === "flex") {
-    navMob.style.display = "none";
-  } else {
-    navMob.style.display = "flex";
-  }
-}
-
-var main = document.querySelector("main");
-var cursor = document.querySelector("#cursor");
-
-main.addEventListener("mousemove", function (e) {
-  console.log("Clicked");
   gsap.to(cursor, {
-    x: e.clientX,
-    y: e.clientY,
-    duration: 1,
-    scale: 1,
+    x: e.x,
+    y: e.y,
+    scale: 2.3,
+    duration: 0.6,
   });
 });
 
-  
+// Hide the cursor when leaving the image
+imgHome.addEventListener("mouseleave", function () {
+  cursor.style.display = "none";
+  gsap.to(cursor, {
+    scale: 1, // Reset scale on mouse leave
+    duration: 0.2,
+  });
+});
+
+const images = [
+  "/assets/169shots_so.png",
+  "/assets/335_1x_shots_so.png",
+  "/assets/361_2x_shots_so.png",
+];
+let currentImageIndex = 0;
+
+imgHome.style.opacity = 1; // Ensure the image starts fully visible
+
+imgHome.addEventListener("click", function () {
+  const timeline = gsap.timeline(); // Create a new timeline
+
+  // First, rotate the image while fading out
+  timeline
+    .to(imgHome, {
+      rotationY: "+=180", // Rotate 360 degrees
+      opacity: 0,
+      duration: 0.5, // Duration for rotation and fade
+      scrub: 4,
+    })
+    .call(function () {
+      // Change the image source when the rotation is complete
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      imgHome.src = images[currentImageIndex];
+    })
+    .to(imgHome, {
+      opacity: 1, // Fade in the new image
+      rotationY: 0, // Reset rotation for the new image
+      duration: 0.5,
+      scrub: 4, // Duration for fade in
+    });
+});
