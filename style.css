@@ -92,7 +92,7 @@ nav {
 .reg-btn {
   font-family: "Raleway", sans-serif;
   width: 80px;
-  height: 30px;
+  height: 38px;
   font-size: 14px;
   background-color: #c1d8d2;
   border: none;
@@ -100,12 +100,12 @@ nav {
   padding: 0 10px 0 10px;
   border: 1px solid black;
   font-weight: 600;
+  border-radius: 40px;
 }
 
 .reg-btn:hover {
-  border-radius: 40px;
-  border: 1px solid black;
-  transition: all 2s ease-in;
+ background-color: #8ccaca;
+ color: black;
 }
 
 .desk-menu a:hover {
@@ -187,3 +187,16 @@ home {
   border: rgb(227, 218, 218) 1px solid;
 }
 
+#loader {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.184);
+  z-index: 99;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(20px);
+}
