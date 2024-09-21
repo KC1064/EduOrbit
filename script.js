@@ -27,30 +27,33 @@ document.addEventListener("DOMContentLoaded", function () {
     stagger: 0.2,
   });
 
-  tl.from("#img-home", {
+  tl.from(".home-img", {
     x: 200,
     opacity: 0,
     duration: 0.5,
   });
 
   tl.to("#img-home", {
-    y: 8,
-    duration: 1, 
-    repeat: -1, 
-    yoyo: true, 
-    ease: "power1.inOut",
+    y: 10, 
+    yoyo: true,
+    duration: 1.5,
+    repeat: -1,
+    ease: "power1.inOut", 
   });
+  
 
   const cursor = document.querySelector("#cursor");
   const imgHome = document.querySelector("#img-home");
+
+  if (!imgHome || !cursor) return; // Ensure elements exist
 
   imgHome.addEventListener("mousemove", function (e) {
     cursor.style.display = "flex";
     cursor.innerHTML = "Click";
 
     gsap.to(cursor, {
-      x: e.x,
-      y: e.y,
+      x: e.clientX,
+      y: e.clientY,
       scale: 2.3,
       duration: 0.6,
     });
@@ -59,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
   imgHome.addEventListener("mouseleave", function () {
     cursor.style.display = "none";
     gsap.to(cursor, {
-      scale: 1, 
+      scale: 1,
       duration: 0.2,
     });
   });
@@ -75,22 +78,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
   imgHome.addEventListener("click", function () {
     const timeline = gsap.timeline();
-
+  
     timeline
       .to(imgHome, {
-        rotationY: "+=540", 
+        scale: 1.2,
         opacity: 0,
-        duration: 0.5, 
-        scrub: 4,
+        duration: 0.5,
+        ease: "power1.inOut",
       })
       .call(function () {
         currentImageIndex = (currentImageIndex + 1) % images.length;
         imgHome.src = images[currentImageIndex];
       })
       .to(imgHome, {
-        opacity: 1,
-        rotationY: "+=180",
+        scale: 1,
+        opacity:1,
         duration: 0.5,
+        ease: "power1.inOut",
       });
   });
+  
 });
