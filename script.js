@@ -1,5 +1,3 @@
-const loader = document.querySelector("#loader");
-
 document.addEventListener("DOMContentLoaded", function () {
   const tl = gsap.timeline();
 
