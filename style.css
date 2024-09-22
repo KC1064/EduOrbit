@@ -234,6 +234,11 @@ i {
   display: none;
 }
 
+.mob-reg i {
+  cursor: pointer;
+  font-size: 30px;
+}
+
 #mob-menu i{
   position:absolute;
   top: 6%;
@@ -245,6 +250,7 @@ i {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .mob-reg-btn {
@@ -265,10 +271,6 @@ i {
   text-decoration: none;
   color: black;
   font-family: "Playfair Display";
-}
-
-.menu {
-  font-size: 30px;
 }
 
 @media (max-width:1000px) {
