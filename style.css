@@ -217,11 +217,12 @@ i {
 #mob-menu {
   position: fixed;
   height: 100vh;
-  width: 40%;
-  background-color: #fff;
+  width: 100%;
+  background-color: #ffffff50;
   display: none;
   flex-direction: column;
   top: 0;
+  backdrop-filter: blur(20px);
   right: 0;
   z-index: 1000;
   padding: 60px 40px;
@@ -231,6 +232,19 @@ i {
 
 .mob-reg {
   display: none;
+}
+
+#mob-menu i{
+  position:absolute;
+  top: 6%;
+  right: 6%;
+  background-color: white;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .mob-reg-btn {
