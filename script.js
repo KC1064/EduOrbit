@@ -1,6 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
   const tl = gsap.timeline();
 
+  // Preload images
+  const images = [
+    "/169shots_so.png",
+    "/335_1x_shots_so.png",
+    "/361_2x_shots_so.png",
+  ];
+
+  function preloadImages(imageArray) {
+    imageArray.forEach((image) => {
+      const img = new Image();
+      img.src = image;
+    });
+  }
+
+  preloadImages(images);
+
   // Animate loader appearing
   tl.from("#loader", {
     scale: 0,
@@ -84,11 +100,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
-    const images = [
-      "/169shots_so.png",
-      "/335_1x_shots_so.png",
-      "/361_2x_shots_so.png",
-    ];
     let currentImageIndex = 0;
 
     imgHome.style.opacity = 1;
@@ -152,36 +163,3 @@ document.addEventListener("DOMContentLoaded", function () {
     console.error("Menu, cross, or mobMenu elements not found.");
   }
 });
-
-const smallerview = window.matchMedia("(max-width: 600px)").matches;
-
-// // if (smallerview) {
-// //   tl.pause();
-// //   const tl2 = gsap.timeline();
-  
-// //   tl2.from(".nav-logo img", {
-// //     y: 200,
-// //     opacity: 0,
-// //     duration: 0.2,
-// //   });
-
-  
-// //   .from(".home-text > *", {
-// //     x: -200,
-// //     duration: 0.5,
-// //     opacity: 0,
-// //     stagger: 0.2,
-// //   })
-// //   .from(".home-img", {
-// //     x: 200,
-// //     opacity: 0,
-// //     duration: 0.5,
-// //   })
-// //   .to("#img-home", {
-// //     y: 10,
-// //     yoyo: true,
-// //     duration: 1.5,
-// //     repeat: -1,
-// //     ease: "power1.inOut",
-// //   });
-// }
