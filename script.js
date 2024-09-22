@@ -1,10 +1,39 @@
 document.addEventListener("DOMContentLoaded", function () {
   const tl = gsap.timeline();
 
+  // Animate loader appearing
+  tl.from("#loader", {
+    scale: 0,
+    duration: 0.2
+  });
+
+
+  tl.to("#loader", {
+    right: 0,
+    opacity: 1,  
+    duration: 0.5,
+  });
+
+
+  tl.from("#loader p", {
+    scale: 0,
+    duration: 2,
+    // stagger:1
+  });
+
+  tl.to("#loader", {
+    opacity: 0,
+    scale: 0,
+    duration: 1.5,
+    // onComplete: function() {
+    //   document.querySelector("#loader").style.display = "none"; // Hide the loader after animation completes
+    // }
+  });
+
   tl.from(".nav-logo", {
     opacity: 0,
     y: -30,
-    duration: 1,
+    duration: 0.5,
   });
 
   tl.from(".desk-menu a", {
