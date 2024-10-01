@@ -165,3 +165,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+
+const regBtn = document.querySelector(".reg-btn");
+const mobregBtn = document.querySelector(".mob-reg-btn");
+
+regBtn.addEventListener("click", () => {
+  window.location.href = "register.html";
+});
+
+mobregBtn.addEventListener("click",()=>{
+  window.location.href = "register.html";
+  window.location.href = "register.html";
+})
+
+
+//Script JS
+
+

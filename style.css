@@ -388,3 +388,9 @@ i {
     overflow-y: scroll;
   }
 }
+
+register {
+  height: 100vh;
+  width: 100%;
+  background-color: #e2e6d8;
+}
