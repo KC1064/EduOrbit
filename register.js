@@ -63,3 +63,9 @@ function displayValues() {
     newWindow.document.write('<p><b>Branch:</b> ' + branch + '</p>');
     newWindow.document.write('<p><b>Technical Skills:</b> ' + skills.join(', ') + '</p>');
 }
+
+gsap.from(".container",{
+    scale:0,
+    duration: 1,
+    opacity:0
+})

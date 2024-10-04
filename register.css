@@ -3,13 +3,45 @@ body {
   background-color: #f2f2f2;
   margin: 0;
   padding: 0;
+  background-image: linear-gradient(
+    to right top,
+    #c1d8d2,
+    #cbddd3,
+    #d7e1d4,
+    #e2e6d8,
+    #f3ebcc,
+    #eee5be,
+    #dfddcc,
+    #d8d6c4,
+    #bac4af,
+    #99b29f,
+    #77a195,
+    #578e8e
+  );
 }
 .container {
-  max-width: 500px;
+  width: 60%;
   margin: 50px auto;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.631);
   padding: 20px;
   border-radius: 10px;
+  backdrop-filter: blur(50px);
+  /* overflow: hidden; */
+  /* background-image: linear-gradient(
+    to right top,
+    #c1d8d2,
+    #cbddd3,
+    #d7e1d4,
+    #e2e6d8,
+    #f3ebcc,
+    #eee5be,
+    #dfddcc,
+    #d8d6c4,
+    #bac4af,
+    #99b29f,
+    #77a195,
+    #578e8e
+  ); */
 }
 h2 {
   text-align: center;
@@ -17,7 +49,7 @@ h2 {
 }
 label {
   display: block;
-  margin-bottom: 8px;
+  /* margin-bottom: 8px; */
   font-weight: bold;
 }
 input[type="text"],
@@ -25,15 +57,13 @@ input[type="email"],
 input[type="password"],
 input[type="tel"],
 select {
-  width: 100%;
+  width: 90%;
   padding: 10px;
   margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
-input[type="radio"] {
-  margin-right: 10px;
-}
+
 .checkbox {
   margin-bottom: 20px;
 }
@@ -42,7 +72,7 @@ input[type="radio"] {
 }
 input,
 button {
-  margin: 5px;
+  /* margin: 5px; */
   padding: 10px;
 }
 
@@ -73,4 +103,28 @@ input[type="Register"]:hover {
 }
 input[type="reset"]:hover {
   background-color: darkred;
+}
+
+#regForm {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gender-input {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-; */
+  gap: 20px;
+}
+.gender-value {
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#age {
+  width: 90%;
 }
