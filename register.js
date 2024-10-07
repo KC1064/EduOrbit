@@ -67,5 +67,6 @@ function displayValues() {
 gsap.from(".container",{
     scale:0,
     duration: 1,
-    opacity:0
+    opacity:0,
+    delay:0.4
 })

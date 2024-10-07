@@ -128,8 +128,6 @@ document.addEventListener("DOMContentLoaded", function () {
     console.error("Image or cursor elements not found.");
   }
 
-  // Mobile Menu Animation
-  // Mobile Menu Animation
   const menu = document.querySelector(".menu");
   const cross = document.querySelector(".cross");
   const mobMenu = document.querySelector("#mob-menu");
@@ -178,8 +176,3 @@ mobregBtn.addEventListener("click",()=>{
   window.location.href = "register.html";
   window.location.href = "register.html";
 })
-
-
-//Script JS
-
-
